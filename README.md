@@ -1,4 +1,4 @@
-riak-file-storage
+Riak file storage extension for live helper chat
 =================
 
 This extension enables cloud storage using Riak as file storage service. It's very easy to setup and enables horizontal scalability regarding chat files storage.
