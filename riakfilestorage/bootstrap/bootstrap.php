@@ -72,6 +72,10 @@ class erLhcoreClassExtensionRiakfilestorage {
 		$dispatcher->listen('theme.edit.online_image_path',array($this,'themeStoragePath'));	
 		$dispatcher->listen('theme.edit.operator_image_path',array($this,'themeStoragePath'));	
 		$dispatcher->listen('theme.edit.copyright_image_path',array($this,'themeStoragePath'));	
+		$dispatcher->listen('theme.edit.popup_image_path',array($this,'themeStoragePath'));
+		$dispatcher->listen('theme.edit.close_image_path',array($this,'themeStoragePath'));
+		$dispatcher->listen('theme.edit.restore_image_path',array($this,'themeStoragePath'));
+		$dispatcher->listen('theme.edit.minimize_image_path',array($this,'themeStoragePath'));
 		
 		$dispatcher->listen('theme.temppath',array($this,'themeStoragePath'));
 		
@@ -81,7 +85,11 @@ class erLhcoreClassExtensionRiakfilestorage {
 		$dispatcher->listen('theme.edit.store_offline_image',array($this,'themeStoreFile'));
 		$dispatcher->listen('theme.edit.store_online_image',array($this,'themeStoreFile'));		
 		$dispatcher->listen('theme.edit.store_copyright_image',array($this,'themeStoreFile'));		
-		$dispatcher->listen('theme.edit.store_operator_image',array($this,'themeStoreFile'));		
+		$dispatcher->listen('theme.edit.store_operator_image',array($this,'themeStoreFile'));
+		$dispatcher->listen('theme.edit.store_popup_image',array($this,'themeStoreFile'));
+		$dispatcher->listen('theme.edit.store_close_image',array($this,'themeStoreFile'));
+		$dispatcher->listen('theme.edit.store_restore_image',array($this,'themeStoreFile'));
+		$dispatcher->listen('theme.edit.store_minimize_image',array($this,'themeStoreFile'));
 				
 		// Themes files removement
 		$dispatcher->listen('theme.edit.remove_logo_image',array($this,'themeFileRemove'));
@@ -89,8 +97,12 @@ class erLhcoreClassExtensionRiakfilestorage {
 		$dispatcher->listen('theme.edit.remove_offline_image',array($this,'themeFileRemove'));
 		$dispatcher->listen('theme.edit.remove_online_image',array($this,'themeFileRemove'));		
 		$dispatcher->listen('theme.edit.remove_operator_image',array($this,'themeFileRemove'));		
-		$dispatcher->listen('theme.edit.remove_copyright_image',array($this,'themeFileRemove'));	
-
+		$dispatcher->listen('theme.edit.remove_copyright_image',array($this,'themeFileRemove'));		
+		$dispatcher->listen('theme.edit.remove_popup_image',array($this,'themeFileRemove'));
+		$dispatcher->listen('theme.edit.remove_close_image',array($this,'themeFileRemove'));
+		$dispatcher->listen('theme.edit.remove_restore_image',array($this,'themeFileRemove'));
+		$dispatcher->listen('theme.edit.remove_minimize_image',array($this,'themeFileRemove'));
+		
 		// Download events				
 		$dispatcher->listen('theme.download_image.logo_image',array($this,'themeFileDownload'));
 		$dispatcher->listen('theme.download_image.need_help_image',array($this,'themeFileDownload'));
@@ -98,7 +110,11 @@ class erLhcoreClassExtensionRiakfilestorage {
 		$dispatcher->listen('theme.download_image.online_image',array($this,'themeFileDownload'));
 		$dispatcher->listen('theme.download_image.operator_image',array($this,'themeFileDownload'));
 		$dispatcher->listen('theme.download_image.copyright_image',array($this,'themeFileDownload'));
-		
+		$dispatcher->listen('theme.download_image.popup_image',array($this,'themeFileDownload'));
+		$dispatcher->listen('theme.download_image.close_image',array($this,'themeFileDownload'));
+		$dispatcher->listen('theme.download_image.restore_image',array($this,'themeFileDownload'));
+		$dispatcher->listen('theme.download_image.minimize_image',array($this,'themeFileDownload'));
+				
 		// Forms module listener
 		$dispatcher->listen('form.fill.file_path',array($this,'formFillPath'));
 		$dispatcher->listen('form.fill.store_file',array($this,'formStoreFile'));		
